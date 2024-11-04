@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="2000 Pages Demo">
+	<main>
+		<h1>Welcome to the 2000 Pages Sample Fkhr</h1>
+		<p class="instructions">
+			This site contains 2000 generated pages for crawling testing.
+			<br/>
+			<strong>Start exploring:</strong> <a href="/generated/1">Page 1</a>
+		</p>
+		
+		<div class="page-list">
+			<h2>Quick Jump</h2>
+			<ul>
+				{Array.from({ length: 10 }, (_, i) => (
+					<li>
+						<a href={`/generated/${i * 200 + 1}`}>Pages {i * 200 + 1} - {(i + 1) * 200}</a>
+					</li>
+				))}
+			</ul>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.instructions a {
+		color: rgb(var(--accent-light));
+		text-decoration: none;
+	}
+	.instructions a:hover {
+		text-decoration: underline;
+	}
+	.page-list {
+		background: rgba(var(--accent-dark), 33%);
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.page-list h2 {
+		margin-top: 0;
+	}
+	.page-list ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.page-list li {
+		margin: 0.5rem 0;
+	}
+	.page-list a {
+		color: rgb(var(--accent-light));
+		text-decoration: none;
+	}
+	.page-list a:hover {
+		text-decoration: underline;
+	}
+</style>
